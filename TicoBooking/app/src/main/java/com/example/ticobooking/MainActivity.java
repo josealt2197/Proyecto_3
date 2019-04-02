@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast notification = Toast.makeText(this, "La clave es correcta.", Toast.LENGTH_LONG);
             notification.show();
-//            Intent i = new Intent(this, Ingreso.class);
-//            i.putExtra("nombre", usuario);
-//            startActivity(i);
+            Intent i = new Intent(this, Servicios.class);
+            i.putExtra("nombre", usuario);
+            startActivity(i);
         }
     }
 }
