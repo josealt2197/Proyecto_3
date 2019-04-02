@@ -16,7 +16,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@android:dimen/notification_large_icon_height"
+        android:layout_marginLeft="@dimen/fab_margin"
         android:adjustViewBounds="false"
         android:background="@mipmap/logo2"
         android:contentDescription="@string/nav_header_desc"
@@ -25,7 +25,8 @@
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="?android:attr/listDivider" />
+        android:layout_height="25dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="invisible" />
 
 </LinearLayout>
