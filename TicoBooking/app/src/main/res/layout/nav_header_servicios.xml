@@ -16,9 +16,16 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@android:dimen/notification_large_icon_height"
         android:adjustViewBounds="false"
-        android:background="@mipmap/logo1"
+        android:background="@mipmap/logo2"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="?android:attr/listDivider" />
 
 </LinearLayout>

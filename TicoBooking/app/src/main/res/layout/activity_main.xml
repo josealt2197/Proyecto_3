@@ -8,23 +8,26 @@
 
     <EditText
         android:id="@+id/et1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="291dp"
+        android:layout_height="46dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="164dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="Nombre de usuario"
         android:inputType="textPersonName"
+        android:textColorLink="@color/colorPrimary"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/colorPrimary" />/>
 
     <EditText
         android:id="@+id/et2"
-        android:layout_width="wrap_content"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -34,21 +37,25 @@
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
+        android:textColorLink="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et1" />
+        app:layout_constraintTop_toBottomOf="@+id/et1"
+        android:backgroundTint="@color/colorPrimary" />/>
 
     <Button
         android:id="@+id/button"
-        android:layout_width="158dp"
+        android:layout_width="220dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
         android:onClick="verificar"
         android:text="Ingresar"
+        android:textColor="?attr/colorBackgroundFloating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +74,7 @@
         android:onClick="crearcuenta"
         android:text="Registrate"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,12 +86,28 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="¿No tienes una cuenta?"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et2" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="76dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/et1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/costarica128" />
 
 </android.support.constraint.ConstraintLayout>
