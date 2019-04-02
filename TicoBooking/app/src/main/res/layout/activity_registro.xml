@@ -10,85 +10,84 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".registro">
 
             <EditText
                 android:id="@+id/edtNombre"
-                android:layout_width="170dp"
+                android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="29dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Nombre"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtCedula" />
 
             <EditText
                 android:id="@+id/edtCedula"
-                android:layout_width="170dp"
+                android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="29dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Cédula"
                 android:inputType="number"
-                app:layout_constraintEnd_toStartOf="@+id/edtNombre"
-                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+                app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
             <EditText
                 android:id="@+id/edtApellidos"
-                android:layout_width="170dp"
+                android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="23dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Apellidos"
                 android:inputType="textPersonName"
-                app:layout_constraintEnd_toStartOf="@+id/edtTelefono"
-                app:layout_constraintHorizontal_bias="0.371"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtCedula" />
+                app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
 
             <EditText
                 android:id="@+id/edtCorreo"
                 android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Correo electrónico"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtApellidos" />
+                app:layout_constraintTop_toBottomOf="@+id/edtTelefono" />
 
             <EditText
                 android:id="@+id/edtFechaNacimiento"
                 android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="23dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Fecha de nacimiento"
                 android:inputType="date"
@@ -98,62 +97,68 @@
 
             <EditText
                 android:id="@+id/edtTelefono"
-                android:layout_width="170dp"
+                android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="23dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Teléfono"
                 android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtApellidos" />
 
             <EditText
                 android:id="@+id/edtPass"
-                android:layout_width="175dp"
+                android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="33dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
-                app:layout_constraintEnd_toStartOf="@+id/edtRePass"
-                app:layout_constraintHorizontal_bias="0.394"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtFechaNacimiento" />
 
             <EditText
                 android:id="@+id/edtRePass"
-                android:layout_width="175dp"
+                android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="33dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
                 android:hint="Repita la contraseña"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtFechaNacimiento" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPass" />
 
             <Button
                 android:id="@+id/btnRegistrar"
-                android:layout_width="wrap_content"
+                android:layout_width="97dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
                 android:onClick="registrousuario"
                 android:text="Registrar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtPass" />
+                app:layout_constraintTop_toBottomOf="@+id/edtRePass" />
 
             <TextView
                 android:id="@+id/tv1"
@@ -171,6 +176,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Completa los datos que se solicitan."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.048"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
 
         </android.support.constraint.ConstraintLayout>
