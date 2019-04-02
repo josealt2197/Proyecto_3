@@ -188,7 +188,6 @@
                 android:layout_marginRight="8dp"
                 android:text="Completa los datos que se solicitan."
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.048"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
