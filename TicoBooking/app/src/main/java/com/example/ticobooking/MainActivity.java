@@ -40,4 +40,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }
     }
+
+    public void crearcuenta(View v){
+        Intent i = new Intent(this, registro.class);
+        startActivity(i);
+    }
 }
