@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Reservacion"></activity>
         <activity android:name=".registro" />
+        <activity android:name=".Registro"></activity>
         <activity
             android:name=".Servicios"
             android:label="@string/title_activity_servicios"

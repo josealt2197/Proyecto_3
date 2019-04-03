@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class registro extends AppCompatActivity {
+public class Registro extends AppCompatActivity {
 
     private EditText edtCedula, edtNombre, edtApellidos, edtTelefono, edtCorreo, edtFechaNacimiento, edtPass, edtRePass;
 
