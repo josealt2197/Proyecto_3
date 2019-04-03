@@ -12,11 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".prueba_webService"
             android:label="@string/title_activity_prueba_web_service"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity android:name=".Registro" />
+        <activity android:name=".Reservacion"></activity>
+
         <activity
             android:name=".Servicios"
             android:label="@string/title_activity_servicios"

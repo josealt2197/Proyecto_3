@@ -155,13 +155,13 @@
                 android:background="@color/colorPrimary"
                 android:onClick="registrousuario"
                 android:text="Registrar"
+                android:textColor="#fff"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtRePass" />
 
             <TextView
-                android:id="@+id/tv1"
+                android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -189,7 +189,7 @@
                 android:text="Completa los datos que se solicitan."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
 
         </android.support.constraint.ConstraintLayout>
