@@ -36,7 +36,7 @@ namespace HotelService_Android
             list[0].DescripcionHos = "El Costa Rica Marriott Hotel es un hotel de 4 estrellas cerca del centro de Heredia, Costa Rica. Elegido por Condé Nast como uno de los mejores hoteles de Centroamérica, ofrecemos una hermosa arquitectura estilo hacienda, elegantes habitaciones y servicio excepcional. Nuestro hotel en San José, Costa Rica ofrece fácil acceso a una variedad de actividades al aire libre como ecoturismo, cabalgatas y golf. Atracciones cercanas incluyen la plantación de café Britt, el Volcán Poás y el cráter Botos.";
             list[0].ImagenDetail = "https://q-ec.bstatic.com/images/hotel/max1024x768/184/18485289.jpg";
 
-            list.Add(new Hotel());
+            /*list.Add(new Hotel());
             list[1].Id = 2;
             list[1].NombreHos = "Hotel Wilson";
             list[1].Tipo = "Cabinas";
@@ -49,7 +49,7 @@ namespace HotelService_Android
             list[1].HoraEntradaHos = "2:00 p.m.";
             list[1].HoraSalidaHos = "12:00 m.d";
             list[1].DescripcionHos = "En Hoteles Wilson, nos enfocamos en brindar un servicio de calidad, humano, responsable y con alta prioridad en la felicidad de todos quienes nos acompañan en nuestras instalaciones.";
-            list[1].ImagenDetail = "http://hoteleswilson.com/wp-content/uploads/2017/06/piscina.jpg";
+            list[1].ImagenDetail = "http://hoteleswilson.com/wp-content/uploads/2017/06/piscina.jpg";*/
 
             //list[0].=
 

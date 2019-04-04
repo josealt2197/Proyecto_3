@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -24,7 +26,9 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import java.lang.reflect.Type;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 
 public class prueba_webService extends AppCompatActivity /*implements Response.ErrorListener, Response.Listener<String> */{
     EditText numero;
@@ -80,7 +84,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
 
         @Override
         protected void onPostExecute(Void result){
-            nombreHos.setText("RESPONSE: " + resultString + ", MENSAJE: " + mensaje);
+            //nombreHos.setText("RESPONSE: " + resultString + ", MENSAJE: " + mensaje);
         }
 
     }
@@ -91,16 +95,16 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
 //        String NAMESPACE = "http://localhost:65400/WebService_Hotel";
 //        String URL = "http://192.168.100.17:8091/WebService_Hotel.asmx";
 
-        String SOAP_ACTION = "http://192.168.100.17:8091/WebService_Hotel/SearchHotel";
+        String SOAP_ACTION = "http://localhost:65400/WebService_Hotel/SearchHotel";
         String METHOD_NAME = "SearchHotel";
-        String NAMESPACE = "http://192.168.100.17:8091/WebService_Hotel";
-        String URL = "http://192.168.100.17:8091/WebService_Hotel.asmx";
+        String NAMESPACE = "http://localhost:65400/WebService_Hotel";
+        String URL = "http://192.168.100.6:8091/WebService_Hotel.asmx";
 
         try{
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
 
             Request.addProperty("id", id);
-
+            Log.e("ID ENVIADO:", id);
             SoapSerializationEnvelope soapEnvelope = new SoapSerializationEnvelope(SoapEnvelope.VER12);
             soapEnvelope.dotNet = true;
             soapEnvelope.setOutputSoapObject(Request);
@@ -108,13 +112,40 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
             HttpTransportSE transport = new HttpTransportSE(URL);
             transport.call(SOAP_ACTION, soapEnvelope);
             resultString = (SoapPrimitive) soapEnvelope.getResponse();
+            Log.e("VALORDEVUELTO", resultString.toString() );
+
+            String  strJSON = resultString.toString();
+            crearLista();
 
             mensaje = "OK";
 
         }catch (Exception ex){
             mensaje = "ERROR: " + ex.getMessage();
+            Log.e("MENSAJEERROR:", ex.getMessage());
         }
     }
+
+    private void crearLista(){
+        String userJson = "{'Id': 1,'NombreHos': 'Hotel Marriot','Tipo': 'Hotel', 'CantidadHuespedes': 4, 'ProvinciaHos': 'Heredia','Precio': 308}";
+
+        //se crea el objeto que ayuda deserealizar la cadena JSON
+        Gson gson = new Gson();
+
+        String arrListAOS;
+        arrListAOS=userJson.replaceAll("\\[", "").replaceAll("\\]","");
+        Log.e("ARRAY:", arrListAOS );
+
+        Mensaje userObject = gson.fromJson(arrListAOS, Mensaje.class);
+
+        //Asignaos la ArrayList al controls ListView para mostrar
+        //la lista de SO Android que se consumieron del web service
+        nombreHos.setText("NOMBRE: " + userObject.getNombreHos());
+        tipo.setText("TIPO: " + userObject.getTipo());
+        cantidad.setText("CANTIDAD: " + userObject.getCantidad());
+        provincia.setText("PROVINCIA: " + userObject.getProvincia());
+        precio.setText("PRECIO: " + userObject.getPrecio());
+    }
+
 
     /*public void enviaNumero(View view){
         EnvioMensaje enviaMensaje = new EnvioMensaje(numero.getText().toString());
