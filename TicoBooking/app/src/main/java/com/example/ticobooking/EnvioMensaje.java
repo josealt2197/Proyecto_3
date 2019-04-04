@@ -24,7 +24,7 @@ public class EnvioMensaje {
         int id = Integer.parseInt(numero);
         credenciales.put("id", id);
 
-        String url = "http://192.168.56.1:51995/HotelGeneratorService.svc?wsdl/select_hotel"; //Direccion del web service
+        String url = "http://192.168.56.1:65400/WebService_Hotel.asmx/SearchHotel"; //Direccion del web service
         StringRequest request = new StringRequest(Request.Method.POST, url, responseListener, errorListener) {
             @Override
             public String getBodyContentType() {

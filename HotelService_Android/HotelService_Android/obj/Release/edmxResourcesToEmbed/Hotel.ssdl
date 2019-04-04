@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="NombreHos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CantidadHuespedes" Type="int" Nullable="false" />
+    <Property Name="UbicacionExacta" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ProvinciaHos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiciosIncluidos" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Precio" Type="int" Nullable="false" />
+    <Property Name="ImagenHos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoraEntradaHos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoraSalidaHos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DescripcionHos" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="ImagenDetail" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="HotelModelStoreContainer">
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
