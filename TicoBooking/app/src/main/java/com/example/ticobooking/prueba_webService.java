@@ -86,10 +86,15 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
     }
 
     public void enviaNumero(){
-        String SOAP_ACTION = "http://localhost:65400/WebService_Hotel/SearchHotel";
+//        String SOAP_ACTION = "http://localhost:65400/WebService_Hotel/SearchHotel";
+//        String METHOD_NAME = "SearchHotel";
+//        String NAMESPACE = "http://localhost:65400/WebService_Hotel";
+//        String URL = "http://192.168.100.17:8091/WebService_Hotel.asmx";
+
+        String SOAP_ACTION = "http://192.168.100.17:8091/WebService_Hotel/SearchHotel";
         String METHOD_NAME = "SearchHotel";
-        String NAMESPACE = "http://localhost:65400/WebService_Hotel";
-        String URL = "http://192.168.0.36:65400/WebService_Hotel.asmx";
+        String NAMESPACE = "http://192.168.100.17:8091/WebService_Hotel";
+        String URL = "http://192.168.100.17:8091/WebService_Hotel.asmx";
 
         try{
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
