@@ -14,9 +14,9 @@ import android.widget.TextView;
 public class Hoteles extends Fragment {
 
     private ListView lv;
-    private int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2, R.mipmap.bg_masthead3};
-    private String []name={"Hotel 1","Hotel 2", "Hotel 3"};
-    private String []desc={"Desc1", "Desc2","Desc3"};
+    private int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2, R.mipmap.bg_masthead3, R.mipmap.bg_masthead, R.mipmap.bg_masthead};
+    private String []name={"Hotel 1","Hotel 2", "Hotel 3", "Hotel 4", "Hotel 5"};
+    private String []desc={"Desc1", "Desc2","Desc3","Desc4","Desc5"};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
