@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,24 +24,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void verificar(View v){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
         String clave=et2.getText().toString();
         String usuario=et1.getText().toString();
-        if(clave.length()==0){
-            Toast notification=Toast.makeText(this, "La clave no puede estar vacía.", Toast.LENGTH_LONG);
-            notification.show();
-        }else if(usuario.length()==0){
+        Cursor user = bd.rawQuery("select email, pass from usuarios where email='"+usuario+"'", null);
+
+        if(usuario.length()==0){
             Toast notification=Toast.makeText(this, "El usuario no puede estar vacío.", Toast.LENGTH_LONG);
             notification.show();
-        }else if(!clave.equals("pass1234")){
-            Toast notification=Toast.makeText(this, "La clave es incorrecta.", Toast.LENGTH_LONG);
+        }else if(clave.length()==0){
+            Toast notification=Toast.makeText(this, "La clave no puede estar vacía.", Toast.LENGTH_LONG);
             notification.show();
         }else{
-            Toast notification = Toast.makeText(this, "La clave es correcta.", Toast.LENGTH_LONG);
-            notification.show();
-            Intent i = new Intent(this, Servicios.class);
-            i.putExtra("nombre", usuario);
-            startActivity(i);
+            if(user.moveToFirst()){
+                if(!clave.equals(user.getString(1))){
+                    Toast notification=Toast.makeText(this, "Su correo o contraseña no son correctos.", Toast.LENGTH_LONG);
+                    notification.show();
+                }else if(!usuario.equals(user.getString(0))){
+                    Toast notification = Toast.makeText(this, "Su correo o contraseña no son correctos.", Toast.LENGTH_LONG);
+                    notification.show();
+                }else if(usuario.equals(user.getString(0)) && (clave.equals(user.getString(1)))){
+                    Intent i = new Intent(this, Servicios.class);
+                    i.putExtra("nombre", usuario);
+                    startActivity(i);
+                }
+            }else{
+                Toast.makeText(this, "No existe un usuario con dichas credenciales", Toast.LENGTH_SHORT).show();
+            }
         }
+        bd.close();
     }
 
     public void crearcuenta(View v){
