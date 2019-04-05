@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
 public class prueba_webService extends AppCompatActivity /*implements Response.ErrorListener, Response.Listener<String> */{
     EditText numero;
-    TextView nombreHos, tipo, cantidad, provincia, precio;
+    TextView nombreHos, tipo, cantidad, provincia, precio, imagendetail;
     Button envia;
     String mensaje;
     String id;
@@ -53,6 +53,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         cantidad = (TextView) findViewById(R.id.cantidad);
         provincia = (TextView) findViewById(R.id.provincia);
         precio = (TextView) findViewById(R.id.precio);
+        imagendetail = (TextView) findViewById(R.id.imagendetail);
 
         envia = (Button) findViewById(R.id.envia);
 
@@ -115,7 +116,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
             Log.e("VALORDEVUELTO", resultString.toString() );
 
             String  strJSON = resultString.toString();
-            crearLista();
+            crearLista(strJSON);
 
             mensaje = "OK";
 
@@ -125,14 +126,15 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         }
     }
 
-    private void crearLista(){
-        String userJson = "{'Id': 1,'NombreHos': 'Hotel Marriot','Tipo': 'Hotel', 'CantidadHuespedes': 4, 'ProvinciaHos': 'Heredia','Precio': 308}";
+    private void crearLista(String strJSON){
+        String userJson = "[{'Id': 1,'NombreHos': 'Hotel Marriot','Tipo': 'Hotel', 'CantidadHuespedes': 4, 'ProvinciaHos': 'Heredia','Precio': 308}]";
+        String prueajson = "[{\"Id\": 1,\"NombreHos\": \"Hotel Marriot\",\"Tipo\": \"Hotel\", \"CantidadHuespedes\": 4, \"ProvinciaHos\": \"Heredia\",\"Precio\": 308}]";
 
         //se crea el objeto que ayuda deserealizar la cadena JSON
         Gson gson = new Gson();
 
         String arrListAOS;
-        arrListAOS=userJson.replaceAll("\\[", "").replaceAll("\\]","");
+        arrListAOS=strJSON.replaceAll("\\[", "").replaceAll("\\]","");
         Log.e("ARRAY:", arrListAOS );
 
         Mensaje userObject = gson.fromJson(arrListAOS, Mensaje.class);
@@ -144,6 +146,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         cantidad.setText("CANTIDAD: " + userObject.getCantidad());
         provincia.setText("PROVINCIA: " + userObject.getProvincia());
         precio.setText("PRECIO: " + userObject.getPrecio());
+        imagendetail.setText("IMGDETAIL: " + userObject.getImagendetail());
     }
 
 
