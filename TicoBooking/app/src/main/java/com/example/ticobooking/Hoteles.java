@@ -29,7 +29,7 @@ import java.util.List;
 public class Hoteles extends Fragment {
 
 //    private ListView lv;
-//    int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2};
+    int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2};
 
     //region Variables para TextView e ImageView
     TextView tvNombre1, tvNombre2, tvNombre3, tvNombre4, tvNombre5, tvNombre6, tvNombre7, tvNombre8, tvNombre9, tvNombre10;
@@ -122,7 +122,7 @@ public class Hoteles extends Fragment {
             tvTipo6 = view.findViewById(R.id.tvTipo6);
             tvTipo7 = view.findViewById(R.id.tvTipo7);
             tvTipo8 = view.findViewById(R.id.tvTipo8);
-            tvTipo8 = view.findViewById(R.id.tvTipo8);
+            tvTipo9 = view.findViewById(R.id.tvTipo9);
             tvTipo10 = view.findViewById(R.id.tvTipo10);
         //endregion
 
@@ -158,21 +158,20 @@ public class Hoteles extends Fragment {
     public class SegundoPlano extends AsyncTask<Void, Void, Void>{
 
         @Override
+        protected void onPreExecute(){
+
+        }
+
+        @Override
         protected Void doInBackground(Void... params) {
             cargarhotel();
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    cargarvalores();
-                }
-            });
 
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result){
-            //nombreHos.setText("RESPONSE: " + resultString + ", MENSAJE: " + mensaje);
+            cargarvalores();
         }
     }
 
@@ -180,7 +179,7 @@ public class Hoteles extends Fragment {
         String SOAP_ACTION = "http://localhost:65400/WebService_Hotel/SearchHotel";
         String METHOD_NAME = "SearchHotel";
         String NAMESPACE = "http://localhost:65400/WebService_Hotel";
-        String URL = "http://192.168.100.17:8091/WebService_Hotel.asmx";
+        String URL = "http://192.168.100.6:8091/WebService_Hotel.asmx";
 
         try {
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -201,7 +200,7 @@ public class Hoteles extends Fragment {
             TypeToken<ArrayList<Mensaje>> token = new TypeToken<ArrayList<Mensaje>>() {};
             List<Mensaje> hotellist = gson.fromJson(strJSON, token.getType());
 
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 10; i++) {
                 name[i] = hotellist.get(i).getNombreHos();
                 prov[i] = hotellist.get(i).getProvincia();
                 precio[i] = String.valueOf(hotellist.get(i).getPrecio());
