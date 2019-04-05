@@ -79,8 +79,8 @@
             android:layout_height="match_parent"
             tools:context=".Hoteles">
 
-            <Button
-                android:id="@+id/btnlist"
+            <TextView
+                android:id="@+id/tvtitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -88,10 +88,25 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:text="Lista"
+                android:text="Opciones de hospedaje"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dividerinicio"
+                android:layout_width="100dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvtitulo" />
 
             <!-- **************************************HOTEL #1******************************************** -->
 
@@ -112,18 +127,18 @@
 
             <TextView
                 android:id="@+id/tvNombre1"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
-                android:layout_marginTop="43dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
+                android:layout_marginTop="60dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel1"
-                app:layout_constraintTop_toBottomOf="@+id/btnlist" />
+                app:layout_constraintTop_toBottomOf="@+id/tvtitulo" />
 
             <TextView
                 android:id="@+id/tvProvincia1"
@@ -143,7 +158,7 @@
                 android:id="@+id/tvCantidad1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -157,7 +172,10 @@
                 android:layout_marginTop="150dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
                 android:text="Tipo"
+                android:textColor="#fff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -207,15 +225,15 @@
 
             <TextView
                 android:id="@+id/tvNombre2"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel2"
                 app:layout_constraintTop_toBottomOf="@+id/divider1" />
@@ -238,7 +256,7 @@
                 android:id="@+id/tvCantidad2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -252,7 +270,10 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="#FFD107"
+                android:padding="4dp"
                 android:text="Tipo"
+                android:textColor="#000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
@@ -302,15 +323,15 @@
 
             <TextView
                 android:id="@+id/tvNombre3"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel3"
                 app:layout_constraintTop_toBottomOf="@+id/divider2" />
@@ -333,7 +354,7 @@
                 android:id="@+id/tvCantidad3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -347,6 +368,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider2" />
@@ -398,15 +422,15 @@
 
             <TextView
                 android:id="@+id/tvNombre4"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel4"
                 app:layout_constraintTop_toBottomOf="@+id/divider4" />
@@ -429,7 +453,7 @@
                 android:id="@+id/tvCantidad4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -443,6 +467,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider4" />
@@ -494,15 +521,15 @@
 
             <TextView
                 android:id="@+id/tvNombre5"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel5"
                 app:layout_constraintTop_toBottomOf="@+id/divider5" />
@@ -525,7 +552,7 @@
                 android:id="@+id/tvCantidad5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -539,6 +566,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider5" />
@@ -590,15 +620,15 @@
 
             <TextView
                 android:id="@+id/tvNombre6"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel6"
                 app:layout_constraintTop_toBottomOf="@+id/divider6" />
@@ -621,7 +651,7 @@
                 android:id="@+id/tvCantidad6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -635,6 +665,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider6" />
@@ -686,15 +719,15 @@
 
             <TextView
                 android:id="@+id/tvNombre7"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel7"
                 app:layout_constraintTop_toBottomOf="@+id/divider7" />
@@ -717,7 +750,7 @@
                 android:id="@+id/tvCantidad7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -731,6 +764,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider7" />
@@ -782,15 +818,15 @@
 
             <TextView
                 android:id="@+id/tvNombre8"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel8"
                 app:layout_constraintTop_toBottomOf="@+id/divider8" />
@@ -813,7 +849,7 @@
                 android:id="@+id/tvCantidad8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -827,6 +863,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider8" />
@@ -878,15 +917,15 @@
 
             <TextView
                 android:id="@+id/tvNombre9"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel9"
                 app:layout_constraintTop_toBottomOf="@+id/divider9" />
@@ -909,7 +948,7 @@
                 android:id="@+id/tvCantidad9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -923,6 +962,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider9" />
@@ -976,15 +1018,15 @@
 
             <TextView
                 android:id="@+id/tvNombre10"
-                android:layout_width="wrap_content"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginRight="161dp"
                 android:text="Nombre"
+                android:textColor="@color/design_default_color_primary_dark"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgHotel10"
                 app:layout_constraintTop_toBottomOf="@+id/divider10" />
@@ -1007,7 +1049,7 @@
                 android:id="@+id/tvCantidad10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
                 android:text="Cantidad"
@@ -1021,6 +1063,9 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="55dp"
                 android:layout_marginRight="55dp"
+                android:background="@color/colorAccent"
+                android:padding="4dp"
+                android:textColor="#fff"
                 android:text="Tipo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider10" />

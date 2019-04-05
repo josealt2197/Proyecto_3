@@ -29,7 +29,7 @@ import java.util.List;
 public class Hoteles extends Fragment {
 
 //    private ListView lv;
-    int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2, R.mipmap.bg_masthead2};
+    int []img={R.mipmap.marriot, R.mipmap.wilson, R.mipmap.hilton, R.mipmap.tamarindo, R.mipmap.lost_iguana, R.mipmap.barcelo, R.mipmap.cameleon, R.mipmap.mardeluz, R.mipmap.hyatt,  R.mipmap.quelitales};
 
     //region Variables para TextView e ImageView
     TextView tvNombre1, tvNombre2, tvNombre3, tvNombre4, tvNombre5, tvNombre6, tvNombre7, tvNombre8, tvNombre9, tvNombre10;
@@ -47,8 +47,6 @@ public class Hoteles extends Fragment {
     String []cant=new String[15];
     String []tipo=new String[15];
     //endregion
-
-    Button cargar;
 
     SoapPrimitive resultString;
     String mensaje;
@@ -109,7 +107,7 @@ public class Hoteles extends Fragment {
             tvPrecio6 = view.findViewById(R.id.tvPrecio6);
             tvPrecio7 = view.findViewById(R.id.tvPrecio7);
             tvPrecio8 = view.findViewById(R.id.tvPrecio8);
-            tvPrecio9 = view.findViewById(R.id.tvPrecio10);
+            tvPrecio9 = view.findViewById(R.id.tvPrecio9);
             tvPrecio10 = view.findViewById(R.id.tvPrecio10);
         //endregion
 
@@ -136,20 +134,15 @@ public class Hoteles extends Fragment {
             imgHotel7 = view.findViewById(R.id.imgHotel7);
             imgHotel8 = view.findViewById(R.id.imgHotel8);
             imgHotel9 = view.findViewById(R.id.imgHotel9);
-            imgHotel9 = view.findViewById(R.id.imgHotel10);
+            imgHotel10 = view.findViewById(R.id.imgHotel10);
         //endregion
 
         //endregion
 
-        cargar = (Button) view.findViewById(R.id.btnlist);
 
-        cargar.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                SegundoPlano tarea = new SegundoPlano();
-                tarea.execute();
-            }
-        });
+        SegundoPlano tarea = new SegundoPlano();
+        tarea.execute();
+
 
         // Inflate the layout for this fragment
         return view;
@@ -192,7 +185,7 @@ public class Hoteles extends Fragment {
             HttpTransportSE transport = new HttpTransportSE(URL);
             transport.call(SOAP_ACTION, soapEnvelope);
             resultString = (SoapPrimitive) soapEnvelope.getResponse();
-            Log.e("VALORDEVUELTO", resultString.toString());
+            //Log.e("VALORDEVUELTO", resultString.toString());
 
             String strJSON = resultString.toString();
             Gson gson = new Gson();
@@ -200,18 +193,12 @@ public class Hoteles extends Fragment {
             TypeToken<ArrayList<Mensaje>> token = new TypeToken<ArrayList<Mensaje>>() {};
             List<Mensaje> hotellist = gson.fromJson(strJSON, token.getType());
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i <= 9; i++) {
                 name[i] = hotellist.get(i).getNombreHos();
                 prov[i] = hotellist.get(i).getProvincia();
                 precio[i] = String.valueOf(hotellist.get(i).getPrecio());
                 cant[i] = String.valueOf(hotellist.get(i).getCantidad());
                 tipo[i] = hotellist.get(i).getTipo();
-
-                Log.d("Nombre:", name[i]);
-                Log.d("Provincia:", prov[i]);
-                Log.d("Precio:", precio[i]);
-                Log.d("Huepedes:", cant[i]);
-                Log.d("Precio:", tipo[i]);
             }
 
 
@@ -268,16 +255,16 @@ public class Hoteles extends Fragment {
         //endregion
 
         //region Valores Precio
-        tvNombre1.setText(precio[0]);
-        tvNombre2.setText(precio[1]);
-        tvNombre3.setText(precio[2]);
-        tvNombre4.setText(precio[3]);
-        tvNombre5.setText(precio[4]);
-        tvNombre6.setText(precio[5]);
-        tvNombre7.setText(precio[6]);
-        tvNombre8.setText(precio[7]);
-        tvNombre9.setText(precio[8]);
-        tvNombre10.setText(precio[9]);
+        tvPrecio1.setText(precio[0]);
+        tvPrecio2.setText(precio[1]);
+        tvPrecio3.setText(precio[2]);
+        tvPrecio4.setText(precio[3]);
+        tvPrecio5.setText(precio[4]);
+        tvPrecio6.setText(precio[5]);
+        tvPrecio7.setText(precio[6]);
+        tvPrecio8.setText(precio[7]);
+        tvPrecio9.setText(precio[8]);
+        tvPrecio10.setText(precio[9]);
         //endregion
 
         //region Valores Tipo
@@ -291,6 +278,19 @@ public class Hoteles extends Fragment {
         tvTipo8.setText(tipo[7]);
         tvTipo9.setText(tipo[8]);
         tvTipo10.setText(tipo[9]);
+        //endregion
+
+        //region Valores Imagen
+        imgHotel1.setImageResource(img[0]);
+        imgHotel2.setImageResource(img[1]);
+        imgHotel3.setImageResource(img[2]);
+        imgHotel4.setImageResource(img[3]);
+        imgHotel5.setImageResource(img[4]);
+        imgHotel6.setImageResource(img[5]);
+        imgHotel7.setImageResource(img[6]);
+        imgHotel8.setImageResource(img[7]);
+        imgHotel9.setImageResource(img[8]);
+        imgHotel10.setImageResource(img[9]);
         //endregion
 
     }
