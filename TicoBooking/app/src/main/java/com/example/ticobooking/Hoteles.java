@@ -255,16 +255,16 @@ public class Hoteles extends Fragment {
         //endregion
 
         //region Valores Precio
-        tvPrecio1.setText(precio[0]);
-        tvPrecio2.setText(precio[1]);
-        tvPrecio3.setText(precio[2]);
-        tvPrecio4.setText(precio[3]);
-        tvPrecio5.setText(precio[4]);
-        tvPrecio6.setText(precio[5]);
-        tvPrecio7.setText(precio[6]);
-        tvPrecio8.setText(precio[7]);
-        tvPrecio9.setText(precio[8]);
-        tvPrecio10.setText(precio[9]);
+        tvPrecio1.setText("$" + precio[0]);
+        tvPrecio2.setText("$" + precio[1]);
+        tvPrecio3.setText("$" + precio[2]);
+        tvPrecio4.setText("$" + precio[3]);
+        tvPrecio5.setText("$" + precio[4]);
+        tvPrecio6.setText("$" + precio[5]);
+        tvPrecio7.setText("$" + precio[6]);
+        tvPrecio8.setText("$" + precio[7]);
+        tvPrecio9.setText("$" + precio[8]);
+        tvPrecio10.setText("$" + precio[9]);
         //endregion
 
         //region Valores Tipo
