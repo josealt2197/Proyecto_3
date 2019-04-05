@@ -29,6 +29,7 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.lang.reflect.Type;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.List;
 
 public class prueba_webService extends AppCompatActivity /*implements Response.ErrorListener, Response.Listener<String> */{
     EditText numero;
@@ -99,7 +100,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         String SOAP_ACTION = "http://localhost:65400/WebService_Hotel/SearchHotel";
         String METHOD_NAME = "SearchHotel";
         String NAMESPACE = "http://localhost:65400/WebService_Hotel";
-        String URL = "http://192.168.100.6:8091/WebService_Hotel.asmx";
+        String URL = "http://192.168.100.17:8091/WebService_Hotel.asmx";
 
         try{
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -113,7 +114,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
             HttpTransportSE transport = new HttpTransportSE(URL);
             transport.call(SOAP_ACTION, soapEnvelope);
             resultString = (SoapPrimitive) soapEnvelope.getResponse();
-            Log.e("VALORDEVUELTO", resultString.toString() );
+            Log.d("VALORDEVUELTO", resultString.toString() );
 
             String  strJSON = resultString.toString();
             crearLista(strJSON);
@@ -127,7 +128,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
     }
 
     private void crearLista(String strJSON){
-        String name[]= new String[2];
+        String name[]= new String[10];
         //se crea el objeto que ayuda deserealizar la cadena JSON
         Gson gson = new Gson();
 
@@ -135,20 +136,24 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         arrListAOS=strJSON.replaceAll("\\[", "").replaceAll("\\]","");
         Log.e("ARRAY:", arrListAOS );
 
-        Mensaje userObject = gson.fromJson(arrListAOS, Mensaje.class);
+//        Mensaje userObject = gson.fromJson(strJSON, Mensaje.class);
 
-        //Asignaos la ArrayList al controls ListView para mostrar
-        //la lista de SO Android que se consumieron del web service
-        nombreHos.setText("NOMBRE: " + userObject.getNombreHos());
-        tipo.setText("TIPO: " + userObject.getTipo());
-        cantidad.setText("CANTIDAD: " + userObject.getCantidad());
-        provincia.setText("PROVINCIA: " + userObject.getProvincia());
-        precio.setText("PRECIO: " + userObject.getPrecio());
-        imagendetail.setText("IMGDETAIL: " + userObject.getImagendetail());
 
-        for (int i = 0; i < 1; i++) {
-            name[i] = userObject.getNombreHos();
-            Log.e("Name:", name[i]);
+//        List<Mensaje> hotellist = (List<Mensaje>) new Gson().fromJson( strJSON , Mensaje.class);
+
+        TypeToken<ArrayList<Mensaje>> token = new TypeToken<ArrayList<Mensaje>>() {};
+        List<Mensaje> hotellist = gson.fromJson(strJSON, token.getType());
+
+//        nombreHos.setText("NOMBRE: " + userObject.getNombreHos());
+//        tipo.setText("TIPO: " + userObject.getTipo());
+//        cantidad.setText("CANTIDAD: " + userObject.getCantidad());
+//        provincia.setText("PROVINCIA: " + userObject.getProvincia());
+//        precio.setText("PRECIO: " + userObject.getPrecio());
+//        imagendetail.setText("IMGDETAIL: " + userObject.getImagendetail());
+
+        for (int i = 0; i <= 9; i++) {
+            name[i] = hotellist.get(i).getNombreHos();
+            Log.d("Name:", name[i]);
         }
     }
 

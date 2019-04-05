@@ -14,12 +14,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Hoteles extends Fragment {
@@ -28,6 +32,8 @@ public class Hoteles extends Fragment {
     int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2};
     String []name=new String[15];
     String []desc=new String[15];
+    String []precio=new String[15];
+    //int []price=new int[15];
     Button cargar;
 
     SoapPrimitive resultString;
@@ -56,9 +62,16 @@ public class Hoteles extends Fragment {
     public class SegundoPlano extends AsyncTask<Void, Void, Void>{
 
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected Void doInBackground(Void... params) {
             cargarhotel();
+            CustomAdapter customAdapter = new CustomAdapter();
+            lv.setAdapter(customAdapter);
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            //nombreHos.setText("RESPONSE: " + resultString + ", MENSAJE: " + mensaje);
         }
     }
 
@@ -66,7 +79,7 @@ public class Hoteles extends Fragment {
         String SOAP_ACTION = "http://localhost:65400/WebService_Hotel/SearchHotel";
         String METHOD_NAME = "SearchHotel";
         String NAMESPACE = "http://localhost:65400/WebService_Hotel";
-        String URL = "http://192.168.100.6:8091/WebService_Hotel.asmx";
+        String URL = "http://192.168.100.17:8091/WebService_Hotel.asmx";
 
         try {
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -84,22 +97,20 @@ public class Hoteles extends Fragment {
             String strJSON = resultString.toString();
             Gson gson = new Gson();
 
-            String arrListAOS;
-            arrListAOS = strJSON.replaceAll("\\[", "").replaceAll("\\]", "");
-            Log.e("ARRAY:", arrListAOS);
+            TypeToken<ArrayList<Mensaje>> token = new TypeToken<ArrayList<Mensaje>>() {};
+            List<Mensaje> hotellist = gson.fromJson(strJSON, token.getType());
 
-            Mensaje userObject = gson.fromJson(arrListAOS, Mensaje.class);
-
-            for (int i = 1; i < 3; i++) {
-                name[i] = userObject.getNombreHos();
-                desc[i] = userObject.getDescripcionhos();
+            for (int i = 0; i < 2; i++) {
+                name[i] = hotellist.get(i).getNombreHos();
+                desc[i] = hotellist.get(i).getDescripcionhos();
+                precio[i] = String.valueOf(hotellist.get(i).getPrecio());
+                //String precio = String.valueOf(price[i]);
                 Log.d("Name:", name[i]);
                 Log.d("Desc:", desc[i]);
+                Log.d("Price:", String.valueOf(precio[i]));
             }
 
             mensaje = "OK";
-            CustomAdapter customAdapter = new CustomAdapter();
-            lv.setAdapter(customAdapter);
 
         } catch (Exception ex) {
             mensaje = "ERROR: " + ex.getMessage();
@@ -138,11 +149,5 @@ public class Hoteles extends Fragment {
 
             return convertView;
         }
-    }
-
-    public void crearLista(String strJSON){
-        //se crea el objeto que ayuda deserealizar la cadena JSON
-
-
     }
 }

@@ -81,7 +81,7 @@ namespace HotelService_Android
             list[3].HoraEntradaHos = "2:00 p.m.";
             list[3].HoraSalidaHos = "12:00 m.d.";
             list[3].DescripcionHos = "Tamarindo Diria Beach Resort es un alojamiento de 4 estrellas situado en primera línea de la playa de Tamarindo, una de las más famosas de Costa Rica. Sus 240 habitaciones incorporan televisor de pantalla plana con canales vía satélite, caja fuerte, minibar, aire acondicionado y baño privado con amenities.Además, algunas de ellas tienen terraza particular y / o vistas al Pacífico. El resort dispone de hasta tres áreas diferentes de piscina y cuenta con gimnasio, pista de tenis, tiendas, casino y espacios de acceso exclusivo para adultos.Igualmente, proporciona servicios tales como wifi gratuito, conserjería, masajes, parking sin coste y alquiler de automóviles. Tamarindo Diria Beach Resort sirve cada mañana un desayuno buffet y alberga un total de seis restaurantes, cinco bares y una heladería. Se halla a tan solo cinco minutos en automóvil del Aeropuerto de Tamarindo y a 17 kilómetros de Playa Grande.";
-            list[3].ImagenDetail = "//imgio.trivago.com/gtximages/itemimages/17/68/176852_v2_y.jpeg";
+            list[3].ImagenDetail = "imgio.trivago.com/gtximages/itemimages/17/68/176852_v2_y.jpeg";
 
             list.Add(new Hotel());
             list[4].Id = 5;
@@ -171,7 +171,7 @@ namespace HotelService_Android
             list[9].HoraEntradaHos = "12:00 p.m.";
             list[9].HoraSalidaHos = "12:00 m.d.";
             list[9].DescripcionHos = "Hotel Quelitales, el mejor hotel en Cartago, verdadero hotel de montaña boutique, es paraíso para los birdwachers. Son muy cuidadosos en los detalles para asegurar que su estancia sea lo mejor que puede ser. Es por eso que han ganado premios por su hospitalidad durante los últimos años consecutivos.";
-            list[9].ImagenDetail = "https://thumbnails.trvl-media.com/OZ
+            list[9].ImagenDetail = "https://thumbnails.trvl-media.com/OZ";
             //list[0].=
 
 
