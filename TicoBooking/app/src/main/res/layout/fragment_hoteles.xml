@@ -66,52 +66,996 @@
                 <!--</LinearLayout>-->
 
             <!--</LinearLayout>-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Hoteles">
+
+            <Button
+                android:id="@+id/btnlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Lista"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- **************************************HOTEL #1******************************************** -->
+
+            <ImageView
+            android:id="@+id/imgHotel1"
+            android:layout_width="136dp"
+            android:layout_height="129dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@android:drawable/sym_def_app_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNombre1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="43dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel1"
+                app:layout_constraintTop_toBottomOf="@+id/btnlist" />
+
+            <TextView
+                android:id="@+id/tvProvincia1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo1"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel1"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre1" />
+
+            <TextView
+                android:id="@+id/tvCantidad1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo1" />
+
+            <TextView
+                android:id="@+id/tvTipo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPrecio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad1"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel1"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia1" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel1" />
+
+            <!-- **************************************HOTEL #2******************************************** -->
+            <ImageView
+                android:id="@+id/imgHotel2"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+            <TextView
+                android:id="@+id/tvNombre2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel2"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+            <TextView
+                android:id="@+id/tvProvincia2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo2"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel2"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre2" />
+
+            <TextView
+                android:id="@+id/tvCantidad2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo2" />
+
+            <TextView
+                android:id="@+id/tvTipo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+            <TextView
+                android:id="@+id/tvPrecio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad2"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel2"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia2" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel2" />
+
+            <!-- **************************************HOTEL #3******************************************** -->
+            <ImageView
+                android:id="@+id/imgHotel3"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/tvNombre3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel3"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/tvProvincia3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo3"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel3"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre3" />
+
+            <TextView
+                android:id="@+id/tvCantidad3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo3" />
+
+            <TextView
+                android:id="@+id/tvTipo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/tvPrecio3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad3"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel3"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia3" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel2" />
+
+            <!-- **************************************HOTEL #4******************************************** -->
+
+            <ImageView
+                android:id="@+id/imgHotel4"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+            <TextView
+                android:id="@+id/tvNombre4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel4"
+                app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+            <TextView
+                android:id="@+id/tvProvincia4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo4"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel4"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre4" />
+
+            <TextView
+                android:id="@+id/tvCantidad4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo4" />
+
+            <TextView
+                android:id="@+id/tvTipo4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+            <TextView
+                android:id="@+id/tvPrecio4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad4"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel4"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia4" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel3" />
+
+            <!-- **************************************HOTEL #5******************************************** -->
+
+            <ImageView
+                android:id="@+id/imgHotel5"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+            <TextView
+                android:id="@+id/tvNombre5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel5"
+                app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+            <TextView
+                android:id="@+id/tvProvincia5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo5"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel5"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre5" />
+
+            <TextView
+                android:id="@+id/tvCantidad5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo5" />
+
+            <TextView
+                android:id="@+id/tvTipo5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+            <TextView
+                android:id="@+id/tvPrecio5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad5"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel5"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia5" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel4" />
+
+            <!-- **************************************HOTEL #6******************************************** -->
+
+            <ImageView
+                android:id="@+id/imgHotel6"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+            <TextView
+                android:id="@+id/tvNombre6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel6"
+                app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+            <TextView
+                android:id="@+id/tvProvincia6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo6"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel6"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre6" />
+
+            <TextView
+                android:id="@+id/tvCantidad6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo6" />
+
+            <TextView
+                android:id="@+id/tvTipo6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+            <TextView
+                android:id="@+id/tvPrecio6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad6"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel6"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia6" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel5" />
+
+            <!-- **************************************HOTEL #7******************************************** -->
+
+            <ImageView
+                android:id="@+id/imgHotel7"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+            <TextView
+                android:id="@+id/tvNombre7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel7"
+                app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+            <TextView
+                android:id="@+id/tvProvincia7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo7"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel7"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre7" />
+
+            <TextView
+                android:id="@+id/tvCantidad7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo7" />
+
+            <TextView
+                android:id="@+id/tvTipo7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+            <TextView
+                android:id="@+id/tvPrecio7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad7"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel7"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia7" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel6" />
+
+            <!-- **************************************HOTEL #8******************************************** -->
+
+            <ImageView
+                android:id="@+id/imgHotel8"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+            <TextView
+                android:id="@+id/tvNombre8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel8"
+                app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+            <TextView
+                android:id="@+id/tvProvincia8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo8"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel8"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre8" />
+
+            <TextView
+                android:id="@+id/tvCantidad8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo8" />
+
+            <TextView
+                android:id="@+id/tvTipo8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+            <TextView
+                android:id="@+id/tvPrecio8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad8"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel8"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia8" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel7" />
+
+            <!-- **************************************HOTEL #9******************************************** -->
+
+            <ImageView
+                android:id="@+id/imgHotel9"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider9" />
+
+            <TextView
+                android:id="@+id/tvNombre9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel9"
+                app:layout_constraintTop_toBottomOf="@+id/divider9" />
+
+            <TextView
+                android:id="@+id/tvProvincia9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo9"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel9"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre9" />
+
+            <TextView
+                android:id="@+id/tvCantidad9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo9" />
+
+            <TextView
+                android:id="@+id/tvTipo9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider9" />
+
+            <TextView
+                android:id="@+id/tvPrecio9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad9"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel9"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia9" />
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel8" />
+
+            <!-- **************************************HOTEL #10******************************************** -->
+
+            <ImageView
+                android:id="@+id/imgHotel10"
+                android:layout_width="136dp"
+                android:layout_height="129dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="24dp"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider10" />
+
+            <TextView
+                android:id="@+id/tvNombre10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginRight="161dp"
+                android:text="Nombre"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel10"
+                app:layout_constraintTop_toBottomOf="@+id/divider10" />
+
+            <TextView
+                android:id="@+id/tvProvincia10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginRight="79dp"
+                android:text="Ubicacion"
+                app:layout_constraintEnd_toStartOf="@+id/tvTipo10"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel10"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre10" />
+
+            <TextView
+                android:id="@+id/tvCantidad10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Cantidad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTipo10" />
+
+            <TextView
+                android:id="@+id/tvTipo10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:text="Tipo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider10" />
+
+            <TextView
+                android:id="@+id/tvPrecio10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginRight="72dp"
+                android:text="Precio"
+                app:layout_constraintEnd_toStartOf="@+id/tvCantidad10"
+                app:layout_constraintStart_toEndOf="@+id/imgHotel10"
+                app:layout_constraintTop_toBottomOf="@+id/tvProvincia10" />
+
+            <View
+                android:id="@+id/divider10"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgHotel9" />
 
 
-    <ListView
-        android:id="@+id/lvHoteles"
-        android:layout_width="wrap_content"
-        android:layout_height="615dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlist" />
+        </android.support.constraint.ConstraintLayout>
 
-    <Button
-        android:id="@+id/btnlist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Lista"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </ScrollView>
 
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginRight="8dp"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:text="Hoteles"-->
-        <!--android:textSize="30sp"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent" />-->
 </android.support.constraint.ConstraintLayout>
