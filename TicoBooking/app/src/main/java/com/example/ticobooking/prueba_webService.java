@@ -127,9 +127,7 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
     }
 
     private void crearLista(String strJSON){
-        String userJson = "[{'Id': 1,'NombreHos': 'Hotel Marriot','Tipo': 'Hotel', 'CantidadHuespedes': 4, 'ProvinciaHos': 'Heredia','Precio': 308}]";
-        String prueajson = "[{\"Id\": 1,\"NombreHos\": \"Hotel Marriot\",\"Tipo\": \"Hotel\", \"CantidadHuespedes\": 4, \"ProvinciaHos\": \"Heredia\",\"Precio\": 308}]";
-
+        String name[]= new String[2];
         //se crea el objeto que ayuda deserealizar la cadena JSON
         Gson gson = new Gson();
 
@@ -147,6 +145,11 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         provincia.setText("PROVINCIA: " + userObject.getProvincia());
         precio.setText("PRECIO: " + userObject.getPrecio());
         imagendetail.setText("IMGDETAIL: " + userObject.getImagendetail());
+
+        for (int i = 0; i < 1; i++) {
+            name[i] = userObject.getNombreHos();
+            Log.e("Name:", name[i]);
+        }
     }
 
 

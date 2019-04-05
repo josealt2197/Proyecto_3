@@ -1,5 +1,6 @@
 package com.example.ticobooking;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,9 +25,10 @@ import org.ksoap2.transport.HttpTransportSE;
 public class Hoteles extends Fragment {
 
     private ListView lv;
-    private int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2};
-    private String []name;
-    private String []desc;
+    int []img={R.mipmap.bg_masthead, R.mipmap.bg_masthead2};
+    String []name=new String[15];
+    String []desc=new String[15];
+    Button cargar;
 
     SoapPrimitive resultString;
     String mensaje;
@@ -36,12 +39,36 @@ public class Hoteles extends Fragment {
         View view = inflater.inflate(R.layout.fragment_hoteles, container, false);
         lv= (ListView) view.findViewById(R.id.lvHoteles);
 
+        cargar = (Button) view.findViewById(R.id.btnlist);
+
+        cargar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                SegundoPlano tarea = new SegundoPlano();
+                tarea.execute();
+            }
+        });
+
+        // Inflate the layout for this fragment
+        return view;
+    }
+
+    public class SegundoPlano extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            cargarhotel();
+            return null;
+        }
+    }
+
+    public void cargarhotel() {
         String SOAP_ACTION = "http://localhost:65400/WebService_Hotel/SearchHotel";
         String METHOD_NAME = "SearchHotel";
         String NAMESPACE = "http://localhost:65400/WebService_Hotel";
         String URL = "http://192.168.100.6:8091/WebService_Hotel.asmx";
 
-        try{
+        try {
             SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
 
             Request.addProperty("id", 1);
@@ -52,22 +79,32 @@ public class Hoteles extends Fragment {
             HttpTransportSE transport = new HttpTransportSE(URL);
             transport.call(SOAP_ACTION, soapEnvelope);
             resultString = (SoapPrimitive) soapEnvelope.getResponse();
-            Log.e("VALORDEVUELTO", resultString.toString() );
+            Log.e("VALORDEVUELTO", resultString.toString());
 
-            String  strJSON = resultString.toString();
-            crearLista(strJSON);
+            String strJSON = resultString.toString();
+            Gson gson = new Gson();
+
+            String arrListAOS;
+            arrListAOS = strJSON.replaceAll("\\[", "").replaceAll("\\]", "");
+            Log.e("ARRAY:", arrListAOS);
+
+            Mensaje userObject = gson.fromJson(arrListAOS, Mensaje.class);
+
+            for (int i = 1; i < 3; i++) {
+                name[i] = userObject.getNombreHos();
+                desc[i] = userObject.getDescripcionhos();
+                Log.d("Name:", name[i]);
+                Log.d("Desc:", desc[i]);
+            }
 
             mensaje = "OK";
+            CustomAdapter customAdapter = new CustomAdapter();
+            lv.setAdapter(customAdapter);
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             mensaje = "ERROR: " + ex.getMessage();
-            // Log.e("MENSAJEERROR:", ex.getMessage());
+            Log.e("ErrorResponse", Log.getStackTraceString(ex));
         }
-
-        CustomAdapter customAdapter = new CustomAdapter();
-        lv.setAdapter(customAdapter);
-        // Inflate the layout for this fragment
-        return view;
     }
 
     public class CustomAdapter extends BaseAdapter{
@@ -105,20 +142,7 @@ public class Hoteles extends Fragment {
 
     public void crearLista(String strJSON){
         //se crea el objeto que ayuda deserealizar la cadena JSON
-        Gson gson = new Gson();
 
-        String arrListAOS;
-        arrListAOS=strJSON.replaceAll("\\[", "").replaceAll("\\]","");
-        Log.e("ARRAY:", arrListAOS );
-
-        Mensaje userObject = gson.fromJson(arrListAOS, Mensaje.class);
-
-        for(int i=0;i<img.length;i++){
-            name[i]=userObject.getNombreHos();
-            desc[i]=userObject.getDescripcionhos();
-            Log.d("Name:",name[i]);
-            Log.d("Desc:",desc[i]);
-        }
 
     }
 }
