@@ -129,27 +129,15 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
 
     private void crearLista(String strJSON){
         String name[]= new String[10];
-        //se crea el objeto que ayuda deserealizar la cadena JSON
+
         Gson gson = new Gson();
 
         String arrListAOS;
         arrListAOS=strJSON.replaceAll("\\[", "").replaceAll("\\]","");
         Log.e("ARRAY:", arrListAOS );
 
-//        Mensaje userObject = gson.fromJson(strJSON, Mensaje.class);
-
-
-//        List<Mensaje> hotellist = (List<Mensaje>) new Gson().fromJson( strJSON , Mensaje.class);
-
         TypeToken<ArrayList<Mensaje>> token = new TypeToken<ArrayList<Mensaje>>() {};
         List<Mensaje> hotellist = gson.fromJson(strJSON, token.getType());
-
-//        nombreHos.setText("NOMBRE: " + userObject.getNombreHos());
-//        tipo.setText("TIPO: " + userObject.getTipo());
-//        cantidad.setText("CANTIDAD: " + userObject.getCantidad());
-//        provincia.setText("PROVINCIA: " + userObject.getProvincia());
-//        precio.setText("PRECIO: " + userObject.getPrecio());
-//        imagendetail.setText("IMGDETAIL: " + userObject.getImagendetail());
 
         for (int i = 0; i <= 9; i++) {
             name[i] = hotellist.get(i).getNombreHos();
@@ -157,6 +145,18 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         }
     }
 
+//region Codigo Viejo
+
+//        Mensaje userObject = gson.fromJson(strJSON, Mensaje.class);
+
+//        List<Mensaje> hotellist = (List<Mensaje>) new Gson().fromJson( strJSON , Mensaje.class);
+
+//        nombreHos.setText("NOMBRE: " + userObject.getNombreHos());
+//        tipo.setText("TIPO: " + userObject.getTipo());
+//        cantidad.setText("CANTIDAD: " + userObject.getCantidad());
+//        provincia.setText("PROVINCIA: " + userObject.getProvincia());
+//        precio.setText("PRECIO: " + userObject.getPrecio());
+//        imagendetail.setText("IMGDETAIL: " + userObject.getImagendetail());
 
     /*public void enviaNumero(View view){
         EnvioMensaje enviaMensaje = new EnvioMensaje(numero.getText().toString());
@@ -187,4 +187,5 @@ public class prueba_webService extends AppCompatActivity /*implements Response.E
         provincia.setText("PROVINCIA: " + modelo.getProvincia());
         precio.setText("PRECIO: " + modelo.getPrecio());
     }*/
+    //endregion
 }
