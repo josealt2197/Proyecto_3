@@ -81,10 +81,11 @@ public class Servicios extends AppCompatActivity
             fragmentmanager.beginTransaction().replace(R.id.contenedor, new TipoCambio()).commit();
         } else if (id == R.id.nav_ayuda) {
             fragmentmanager.beginTransaction().replace(R.id.contenedor, new Ayuda()).commit();
-        } else if (id == R.id.nav_ws){
-            Intent i = new Intent(this, prueba_webService.class);
-            startActivity(i);
         }
+//        else if (id == R.id.nav_ws){
+//            Intent i = new Intent(this, prueba_webService.class);
+//            startActivity(i);
+//        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

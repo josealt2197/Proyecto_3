@@ -17,10 +17,6 @@
             android:icon="@mipmap/money"
             android:title="Tipo de Cambio" />
         <item
-            android:id="@+id/nav_ws"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Prueba" />
-        <item
             android:id="@+id/nav_ayuda"
             android:icon="@mipmap/help"
             android:title="Ayuda" />
